@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="opengl_learn" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/opengl_learn" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/opengl_learn" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Linker>
+			<Add library="opengl32" />
+			<Add library="glu32" />
+			<Add library="glut32" />
+			<Add library="../../../../Program Files (x86)/CodeBlocks/MinGW/lib/DevIL.lib" />
+			<Add library="../../../../Program Files (x86)/CodeBlocks/MinGW/lib/ILU.lib" />
+			<Add library="../../../../Program Files (x86)/CodeBlocks/MinGW/lib/ILUT.lib" />
+		</Linker>
+		<Unit filename="basik_classes.cpp" />
+		<Unit filename="basik_classes.h">
+			<Option compile="1" />
+		</Unit>
+		<Unit filename="feel_draw.cpp" />
+		<Unit filename="feel_draw.h">
+			<Option compile="1" />
+		</Unit>
+		<Unit filename="feel_reaction.cpp" />
+		<Unit filename="feel_reaction.h">
+			<Option compile="1" />
+		</Unit>
+		<Unit filename="global_vars.h">
+			<Option compile="1" />
+		</Unit>
+		<Unit filename="includes.h">
+			<Option compile="1" />
+		</Unit>
+		<Unit filename="load_textures.cpp" />
+		<Unit filename="load_textures.h">
+			<Option compile="1" />
+		</Unit>
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
