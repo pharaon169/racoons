@@ -37,7 +37,7 @@ void keyboard(unsigned char c, int x, int y)
                 if ((feel_size*feel_seg_size-startx)*scrol/speed_scrol<=WinWid)
                 {
                     startx-=speed_move;
-                    startx=max(float(0.0),startx);
+                    startx=max(float(-left_menu_size)/scrol,startx);
                 }
 
                 if ((feel_size*feel_seg_size-starty)*scrol/speed_scrol<=WinHei)
@@ -67,7 +67,7 @@ void skeyboard(int c, int x, int y)
             break;
         case GLUT_KEY_LEFT:
             startx-=speed_move;
-            startx=max(float(0.0),startx);
+            startx=max(float(-left_menu_size)/scrol,startx);
             break;
         case GLUT_KEY_DOWN:
             starty+=speed_move;
@@ -98,10 +98,10 @@ void creat_feel()
     left_menu_background=Figure(0,left_menu_size,0,WinHei,empty_,1.0);
 
     for (int i=0;i<7;i++)
-        left_menu_vertical[i]=Figure(0,left_menu_size/2.0,100+i*(WinHei-100)/7.0,100+(i+1)*(WinHei-100)/7.0,empty_,1.0);
+        left_menu_vertical[i]=Figure(0,left_menu_size/2.0,100+i*(WinHei-100)/7.0,100+(i+1)*(WinHei-100)/7.0,put,1.0);
 
     for (int i=0;i<7;i++)
-        left_menu_horizontal[i]=Figure(left_menu_size/2.0,left_menu_size,100+i*(WinHei-100)/7.0,100+(i+1)*(WinHei-100)/7.0,empty_,1.0);
+        left_menu_horizontal[i]=Figure(left_menu_size/2.0,left_menu_size,100+i*(WinHei-100)/7.0,100+(i+1)*(WinHei-100)/7.0,put,1.0);
 }
 
 void Initialize(int w, int h)

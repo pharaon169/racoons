@@ -17,4 +17,5 @@ void load_all()
     feel_background_texture[0]=Load("e1.jpg");
     feel_background_texture[1]=Load("e2.jpg");
     empty_=Load("qqq.png");
+    put=Load("qqq.png");
 }

@@ -12,6 +12,7 @@
         Figure();
         Figure(float x1_, float x2_, float y1_, float y2_, GLuint tex_, float alpha);
         float dist();
+        bool in();
         void draw();
         void draw_state();
 
@@ -32,4 +33,5 @@
     extern Figure left_menu_background;
     extern Figure left_menu_vertical[9];
     extern Figure left_menu_horizontal[9];
+    extern GLuint taken;
 #endif // BASIK_CLASSES_H_INCLUDED

@@ -1,5 +1,20 @@
 #include "feel_draw.h"
 #include "basik_classes.h"
+bool can_put(int i, int j)
+{
+    if ((object[i][j].f.x2-startx)*scrol<=left_menu_size) return(0);
+    if (object[i][j].f.tex!=empty_) return(0);
+    if (i-1!=0)
+        if (object[i-1][j].f.tex!=empty_) return(0);
+    if (i+1!=feel_size)
+        if (object[i+1][j].f.tex!=empty_) return(0);
+    if (j-1!=0)
+        if (object[i][j-1].f.tex!=empty_) return(0);
+    if (j+1!=feel_size)
+        if (object[i][j+1].f.tex!=empty_) return(0);
+    return(1);
+}
+
 void draw_feel()
 {
     for (int i=0;i<int(feel_background.size());i++)
@@ -21,13 +36,19 @@ void draw_feel()
                 mn=object[i][j].f.dist();
             }
         }
-    if (object[imn][jmn].f.tex==empty_ && mousex>left_menu_size)
+    if (can_put(imn,jmn) && mousex>left_menu_size)
         object[imn][jmn].f.alpha=1.0;
 
     for (int i=1;i<feel_size;i++)
         for (int j=1;j<feel_size;j++)
             object[i][j].f.draw();
 
+    if (something_taken)
+    {
+        Figure now=Figure(mousex-feel_seg_size*scrol/2.0,mousex+feel_seg_size*scrol/2.0,
+                          mousey-feel_seg_size*scrol/2.0,mousey+feel_seg_size*scrol/2.0,taken,0.2);
+        now.draw_state();
+    }
 }
 
 void draw_left_menu()

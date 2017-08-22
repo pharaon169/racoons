@@ -11,6 +11,9 @@ int feel_size=30;
 float scrol=1.0;
 float mousex=0.0, mousey=0.0;
 bool in_feel=1;
+bool something_taken=0;
+GLuint taken;
+GLuint put;
 float left_menu_size=350;
 
 GLuint feel_background_texture[2];
@@ -107,6 +110,11 @@ float Figure :: dist()
     res=min(res,dist_(x2_,y1_,mousex,mousey));
     res=min(res,dist_(x2_,y2_,mousex,mousey));
     return(res);
+}
+
+bool Figure :: in()
+{
+    return(x1<=mousex && mousex<=x2 && y1<=mousey && mousey<=y2);
 }
 
 Circle_element :: Circle_element()

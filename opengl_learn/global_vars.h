@@ -24,5 +24,6 @@
     extern GLuint empty_;
     extern float left_menu_size;
     extern bool in_feel;
-
+    extern bool something_taken;
+    extern GLuint put;
 #endif // GLOBAL_VARS_H_INCLUDED
